@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GSB-FRAIS {% block title %}{% endblock %}</title>
+        
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset("assets/vendors/iconfonts/mdi/css/materialdesignicons.css") }}" />
+            <link rel="stylesheet" href="{{ asset("assets/vendors/css/vendor.addons.css") }}" />
+            <link rel="stylesheet" href="{{ asset("assets/css/shared/style.css") }}" />
+            <link rel="stylesheet" href="{{ asset("assets/css/demo_1/style.css") }}">
+            <link rel="shortcut icon" href="{{ asset("assets/images/favicon.ico") }}" />
+        {% endblock %}
+    </head>
+    <body>
+        
+        {% block body %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {# <script type="text/javascript" src="{{ asset("assets/js/bootstrap.min.js") }}"></script>
+            <script type="text/javascript" src="{{ asset("assets/js/bootstrap.js") }}"></script> #}
+
+            <script src="{{ asset("assets/vendors/js/core.js")}}"></script>
+            <script src="{{ asset("assets/vendors/js/vendor.addons.js")}}"></script>
+            <script src="{{ asset("assets/js/template.js")}}"></script>
+        {% endblock %}
+
+    </body>
+</html>
