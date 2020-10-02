@@ -43,6 +43,23 @@ class Modele{
         }else return FALSE;
 
     }
+
+    public function consulterFicheFrais($identifiant, $date){
+        $connexion = $this->connexionBDD();
+
+        if($connexion == TRUE){
+
+            $requete = $connexion->prepare('SELECT * FROM FicheFrais WHERE idVisiteur = :id AND mois = :date', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+
+            $requete->execute(array("id"=>$identifiant, "date"=>$date));
+
+            $resultat = $requete->fetchAll();
+            return $resultat;
+
+
+        }else return FALSE;
+
+    }
     
 
 }

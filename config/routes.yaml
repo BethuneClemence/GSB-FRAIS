@@ -5,3 +5,11 @@ accueil:
 seConnecterVisiteur:
   path: /visiteur
   controller: App\Controller\ConnexionVisiteurController::index
+
+consulterFrais:
+  path: /visiteur/consulterFrais
+  controller: App\Controller\ConsulterFraisController::index
+
+afficherFicheFrais:
+  path: /visiteur/consulterFrais/afficherFicheFrais
+  controller: App\Controller\AfficherFicheFraisController::index

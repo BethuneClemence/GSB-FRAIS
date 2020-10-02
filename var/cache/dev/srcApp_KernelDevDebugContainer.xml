@@ -341,6 +341,10 @@
       <tag name="controller.service_arguments"/>
       <argument type="service" id="twig"/>
     </service>
+    <service id="App\Controller\ConsulterFraisController" class="App\Controller\ConsulterFraisController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <argument type="service" id="twig"/>
+    </service>
     <service id="App\Modele\Modele" class="App\Modele\Modele" autowire="true" autoconfigure="true"/>
     <service id=".legacy_controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -4760,6 +4764,8 @@
     </service>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\ConnexionVisiteurController" class="App\Controller\ConnexionVisiteurController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ConnexionVisiteurController" class="App\Controller\ConnexionVisiteurController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\ConsulterFraisController" class="App\Controller\ConsulterFraisController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ConsulterFraisController" class="App\Controller\ConsulterFraisController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.CmORmuK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">

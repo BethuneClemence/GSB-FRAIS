@@ -100,7 +100,7 @@ class __TwigTemplate_693b3bc64b0cdfcecf6839636e2030b61edfa9a0313cb682d2e66398a49
         if (array_key_exists("echecConnexion", $context)) {
             // line 16
             echo "                                    <div class=\"alert alert-danger\" role=\"alert\">
-                                        La tentative de connexion à échouée ! :(
+                                        La tentative de connexion à échouée ! 😔
                                     </div>
                                 ";
         }
@@ -202,7 +202,7 @@ class __TwigTemplate_693b3bc64b0cdfcecf6839636e2030b61edfa9a0313cb682d2e66398a49
                             <div id=\"connexion\" class=\"col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper\">
                                 {%if echecConnexion is defined%}
                                     <div class=\"alert alert-danger\" role=\"alert\">
-                                        La tentative de connexion à échouée ! :(
+                                        La tentative de connexion à échouée ! 😔
                                     </div>
                                 {% endif %}
 

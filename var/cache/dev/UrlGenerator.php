@@ -17,4 +17,6 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\AccueilController::index'], [], [['text', '/']], [], []],
     'seConnecterVisiteur' => [[], ['_controller' => 'App\\Controller\\ConnexionVisiteurController::index'], [], [['text', '/visiteur']], [], []],
+    'consulterFrais' => [[], ['_controller' => 'App\\Controller\\ConsulterFraisController::index'], [], [['text', '/visiteur/consulterFrais']], [], []],
+    'afficherFicheFrais' => [[], ['_controller' => 'App\\Controller\\AfficherFicheFraisController::index'], [], [['text', '/visiteur/consulterFrais/afficherFicheFrais']], [], []],
 ];

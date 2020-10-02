@@ -47,7 +47,7 @@
                 $modele = new Modele();
                 $unVisiteur = $modele->seConnecterVisiteur($donneesFormulaire['identifiant'], $donneesFormulaire['mdp']); // permet d'appeler la fonction seConnecterVisiteur() par le biai de notre objet $modele 
                 if(!empty($unVisiteur)){
-                    return new Response($this->page->render('visiteur/consulter/consulter.html.twig'));
+                    return new Response($this->page->render('visiteur/menu/menu.html.twig', array('idVisiteur'=> $donneesFormulaire['identifiant'])));
 
                 }else return new Response($this->page->render('visiteur/connexionVisiteur.html.twig', array('formulaireConnexion' => $formulaireConnexion->createView(), 'echecConnexion' => true)));
             }
