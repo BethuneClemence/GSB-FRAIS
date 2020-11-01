@@ -17,6 +17,7 @@ return [
         '/visiteur' => [[['_route' => 'seConnecterVisiteur', '_controller' => 'App\\Controller\\ConnexionVisiteurController::index'], null, null, null, false, false, null]],
         '/visiteur/consulterFrais' => [[['_route' => 'consulterFrais', '_controller' => 'App\\Controller\\ConsulterFraisController::index'], null, null, null, false, false, null]],
         '/visiteur/consulterFrais/afficherFicheFrais' => [[['_route' => 'afficherFicheFrais', '_controller' => 'App\\Controller\\AfficherFicheFraisController::index'], null, null, null, false, false, null]],
+        '/visiteur/saisirFrais' => [[['_route' => 'saisirFrais', '_controller' => 'App\\Controller\\SaisirFraisController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

@@ -16,10 +16,10 @@
   <body class="header-fixed">
     <nav class="t-header">
       <div class="t-header-brand-wrapper">
-        <a href="index.html">
+        {# <a href="index.html">
           <img class="logo" src="{{ asset("assets/images/logo.svg")}}" alt="">
           <img class="logo-mini" src="{{ asset("assets/images/logo_mini.svg")}}" alt="">
-        </a>
+        </a> #}
       </div>
       <div class="t-header-content-wrapper">
         <div class="t-header-content">
@@ -55,17 +55,24 @@
       <div class="sidebar">
         <div class="user-profile">
           <div class="display-avatar animated-avatar">
-            <img class="profile-img img-lg rounded-circle" src="{{ asset("assets/images/profile/male/image_1.png")}}" alt="profile image">
+            <img class="profile-img img-lg rounded-circle" src="{{ asset("assets/images/doctor.png")}}" alt="profile image">
           </div>
           <div class="info-wrapper">
+            {# APP.SESSION.GET() #}
             <p class="user-name">{{ app.session.get('nom') ~' '~ app.session.get('prenom')}}</p>
           </div>
         </div>
         <ul class="navigation-menu">
           <li class="nav-category-divider">Tableau de bord</li>
           <li>
+            <a href="{{path("consulterFrais")}}">
+              <span class="link-title">Consulter Frais</span>
+              <i class="mdi mdi-folder-plus link-icon"></i>
+            </a>
+          </li>
+          <li>
             <a href="#">
-              <span class="link-title">Ajouter une fiche</span>
+              <span class="link-title">Saisir Frais</span>
               <i class="mdi mdi-folder-plus link-icon"></i>
             </a>
           </li>

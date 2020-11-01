@@ -63,17 +63,9 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
   <body class=\"header-fixed\">
     <nav class=\"t-header\">
       <div class=\"t-header-brand-wrapper\">
-        <a href=\"index.html\">
-          <img class=\"logo\" src=\"";
-        // line 20
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logo.svg"), "html", null, true);
-        echo "\" alt=\"\">
-          <img class=\"logo-mini\" src=\"";
-        // line 21
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logo_mini.svg"), "html", null, true);
-        echo "\" alt=\"\">
-        </a>
-      </div>
+        ";
+        // line 23
+        echo "      </div>
       <div class=\"t-header-content-wrapper\">
         <div class=\"t-header-content\">
           <button class=\"t-header-toggler t-header-mobile-toggler d-block d-lg-none\">
@@ -110,36 +102,46 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
           <div class=\"display-avatar animated-avatar\">
             <img class=\"profile-img img-lg rounded-circle\" src=\"";
         // line 58
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/profile/male/image_1.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/doctor.png"), "html", null, true);
         echo "\" alt=\"profile image\">
           </div>
           <div class=\"info-wrapper\">
-            <p class=\"user-name\">";
-        // line 61
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "session", [], "any", false, false, false, 61), "get", [0 => "nom"], "method", false, false, false, 61) . " ") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "session", [], "any", false, false, false, 61), "get", [0 => "prenom"], "method", false, false, false, 61)), "html", null, true);
+            ";
+        // line 62
+        echo "            <p class=\"user-name\">";
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 62, $this->source); })()), "session", [], "any", false, false, false, 62), "get", [0 => "nom"], "method", false, false, false, 62) . " ") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 62, $this->source); })()), "session", [], "any", false, false, false, 62), "get", [0 => "prenom"], "method", false, false, false, 62)), "html", null, true);
         echo "</p>
           </div>
         </div>
         <ul class=\"navigation-menu\">
           <li class=\"nav-category-divider\">Tableau de bord</li>
           <li>
+            <a href=\"";
+        // line 68
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("consulterFrais");
+        echo "\">
+              <span class=\"link-title\">Consulter Frais</span>
+              <i class=\"mdi mdi-folder-plus link-icon\"></i>
+            </a>
+          </li>
+          <li>
             <a href=\"#\">
-              <span class=\"link-title\">Ajouter une fiche</span>
+              <span class=\"link-title\">Saisir Frais</span>
               <i class=\"mdi mdi-folder-plus link-icon\"></i>
             </a>
           </li>
         </ul>
       </div>
       ";
-        // line 74
+        // line 81
         $this->displayBlock('body', $context, $blocks);
-        // line 77
+        // line 84
         echo "    </div>
 
     ";
-        // line 79
+        // line 86
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 88
+        // line 95
         echo "  </body>
 </html>";
         
@@ -207,7 +209,7 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
 
     }
 
-    // line 74
+    // line 81
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -217,7 +219,7 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 75
+        // line 82
         echo "
       ";
         
@@ -228,7 +230,7 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
 
     }
 
-    // line 79
+    // line 86
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -238,32 +240,32 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 80
+        // line 87
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendors/js/core.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 81
+        // line 88
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendors/apexcharts/apexcharts.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 82
+        // line 89
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendors/js/vendor.addons.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 83
+        // line 90
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendors/chartjs/Chart.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 84
+        // line 91
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/charts/chartjs.addon.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 85
+        // line 92
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/template.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 86
+        // line 93
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/dashboard.js"), "html", null, true);
         echo "\"></script>
     ";
@@ -287,7 +289,7 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
 
     public function getDebugInfo()
     {
-        return array (  267 => 86,  263 => 85,  259 => 84,  255 => 83,  251 => 82,  247 => 81,  242 => 80,  232 => 79,  221 => 75,  211 => 74,  199 => 12,  195 => 11,  191 => 10,  187 => 9,  182 => 8,  172 => 7,  154 => 6,  143 => 88,  141 => 79,  137 => 77,  135 => 74,  119 => 61,  113 => 58,  73 => 21,  69 => 20,  60 => 13,  58 => 7,  54 => 6,  47 => 1,);
+        return array (  269 => 93,  265 => 92,  261 => 91,  257 => 90,  253 => 89,  249 => 88,  244 => 87,  234 => 86,  223 => 82,  213 => 81,  201 => 12,  197 => 11,  193 => 10,  189 => 9,  184 => 8,  174 => 7,  156 => 6,  145 => 95,  143 => 86,  139 => 84,  137 => 81,  121 => 68,  111 => 62,  105 => 58,  68 => 23,  60 => 13,  58 => 7,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -310,10 +312,10 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
   <body class=\"header-fixed\">
     <nav class=\"t-header\">
       <div class=\"t-header-brand-wrapper\">
-        <a href=\"index.html\">
+        {# <a href=\"index.html\">
           <img class=\"logo\" src=\"{{ asset(\"assets/images/logo.svg\")}}\" alt=\"\">
           <img class=\"logo-mini\" src=\"{{ asset(\"assets/images/logo_mini.svg\")}}\" alt=\"\">
-        </a>
+        </a> #}
       </div>
       <div class=\"t-header-content-wrapper\">
         <div class=\"t-header-content\">
@@ -349,17 +351,24 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
       <div class=\"sidebar\">
         <div class=\"user-profile\">
           <div class=\"display-avatar animated-avatar\">
-            <img class=\"profile-img img-lg rounded-circle\" src=\"{{ asset(\"assets/images/profile/male/image_1.png\")}}\" alt=\"profile image\">
+            <img class=\"profile-img img-lg rounded-circle\" src=\"{{ asset(\"assets/images/doctor.png\")}}\" alt=\"profile image\">
           </div>
           <div class=\"info-wrapper\">
+            {# APP.SESSION.GET() #}
             <p class=\"user-name\">{{ app.session.get('nom') ~' '~ app.session.get('prenom')}}</p>
           </div>
         </div>
         <ul class=\"navigation-menu\">
           <li class=\"nav-category-divider\">Tableau de bord</li>
           <li>
+            <a href=\"{{path(\"consulterFrais\")}}\">
+              <span class=\"link-title\">Consulter Frais</span>
+              <i class=\"mdi mdi-folder-plus link-icon\"></i>
+            </a>
+          </li>
+          <li>
             <a href=\"#\">
-              <span class=\"link-title\">Ajouter une fiche</span>
+              <span class=\"link-title\">Saisir Frais</span>
               <i class=\"mdi mdi-folder-plus link-icon\"></i>
             </a>
           </li>

@@ -60,6 +60,41 @@ class Modele{
         }else return FALSE;
 
     }
+
+    public function consulterFicheFraisForfait($identifiant, $date){
+        $connexion = $this->connexionBDD();
+
+        if($connexion == TRUE){
+
+            // $requete = $connexion->prepare('SELECT * FROM LigneFraisForfait WHERE idVisiteur = :id AND mois = :date', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $requete = $connexion->prepare('SELECT * FROM FicheFrais as ff INNER JOIN LigneFraisForfait as lff ON lff.idVisiteur = ff.idVisiteur INNER JOIN Etat as E ON E.id = ff.idEtat INNER JOIN LigneFraisHorsForfait as lfhf ON lfhf.idVisiteur = ff.idVisiteur WHERE ff.idVisiteur = :id AND ff.mois = :date', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $requete->execute(array("id"=>$identifiant, "date"=>$date));
+            
+
+            $resultat = $requete->fetchAll();
+            return $resultat;
+
+
+        }else return FALSE;
+
+    }
+
+    public function consulterFicheFraisHorsForfait($identifiant, $date){
+        $connexion = $this->connexionBDD();
+
+        if($connexion == TRUE){
+
+            $requete = $connexion->prepare('SELECT * FROM LigneFraisHorsForfait WHERE idVisiteur = :id AND mois = :date', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+
+            $requete->execute(array("id"=>$identifiant, "date"=>$date));
+
+            $resultat = $requete->fetchAll();
+            return $resultat;
+
+
+        }else return FALSE;
+
+    }
     
 
 }

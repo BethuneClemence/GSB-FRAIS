@@ -33,7 +33,7 @@ class __TwigTemplate_7514bf5115efa4a44d671ccbd6395e87ae16ec6f24687ed8364fe76812e
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "common/dom.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_7514bf5115efa4a44d671ccbd6395e87ae16ec6f24687ed8364fe76812e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "visiteur/menu/menu.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "visiteur/menu/menu.html.twig", 1);
+        $this->parent = $this->loadTemplate("common/dom.html.twig", "visiteur/menu/menu.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -93,21 +93,11 @@ class __TwigTemplate_7514bf5115efa4a44d671ccbd6395e87ae16ec6f24687ed8364fe76812e
                 <div class=\"grid\">
                     <div class=\"grid-body\">
                         <div class=\"row\">
-                            <div id=\"connexion\" class=\"col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper\">
-                                <img src=\"";
+                            <div id=\"connexion\" class=\"col-lg-9 col-md-9 col-sm-9 col-12 mx-auto form-wrapper\">
+                                <h1>Bonjour, <b>";
         // line 14
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/logoGsb.png"), "html", null, true);
-        echo "\" alt=\"logo\" />
-                                <br>
-                                <br>
-                                <a href=\"";
-        // line 17
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("consulterFrais");
-        echo "\" class=\"btn btn-primary btn-lg btn-block\">Consulter Frais</a>
-                                <a href=\"";
-        // line 18
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("consulterFrais");
-        echo "\" class=\"btn btn-primary btn-lg btn-block\">Saisir Frais</a>
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "session", [], "any", false, false, false, 14), "get", [0 => "nom"], "method", false, false, false, 14) . " ") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "session", [], "any", false, false, false, 14), "get", [0 => "prenom"], "method", false, false, false, 14)), "html", null, true);
+        echo "</b> content de vous revoir</h1>
                             </div>
                         </div>
                     </div>
@@ -144,12 +134,12 @@ class __TwigTemplate_7514bf5115efa4a44d671ccbd6395e87ae16ec6f24687ed8364fe76812e
 
     public function getDebugInfo()
     {
-        return array (  109 => 18,  105 => 17,  99 => 14,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  99 => 14,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig'%}
+        return new Source("{% extends 'common/dom.html.twig'%}
 {% block title %}- Visiteur{% endblock %}
 
 {% block body %}
@@ -161,12 +151,8 @@ class __TwigTemplate_7514bf5115efa4a44d671ccbd6395e87ae16ec6f24687ed8364fe76812e
                 <div class=\"grid\">
                     <div class=\"grid-body\">
                         <div class=\"row\">
-                            <div id=\"connexion\" class=\"col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper\">
-                                <img src=\"{{ asset(\"assets/images/logoGsb.png\")}}\" alt=\"logo\" />
-                                <br>
-                                <br>
-                                <a href=\"{{path(\"consulterFrais\")}}\" class=\"btn btn-primary btn-lg btn-block\">Consulter Frais</a>
-                                <a href=\"{{path(\"consulterFrais\")}}\" class=\"btn btn-primary btn-lg btn-block\">Saisir Frais</a>
+                            <div id=\"connexion\" class=\"col-lg-9 col-md-9 col-sm-9 col-12 mx-auto form-wrapper\">
+                                <h1>Bonjour, <b>{{ app.session.get('nom') ~' '~ app.session.get('prenom')}}</b> content de vous revoir</h1>
                             </div>
                         </div>
                     </div>

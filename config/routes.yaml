@@ -13,3 +13,7 @@ consulterFrais:
 afficherFicheFrais:
   path: /visiteur/consulterFrais/afficherFicheFrais
   controller: App\Controller\AfficherFicheFraisController::index
+
+saisirFrais:
+  path: /visiteur/saisirFrais
+  controller: App\Controller\SaisirFraisController::index

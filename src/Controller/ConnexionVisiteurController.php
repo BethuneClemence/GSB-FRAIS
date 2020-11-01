@@ -27,10 +27,10 @@
 
         } // a toujours avoir dans chaque controlleur
 
-        public function index(){
-
+        public function index(Request $request){
+            
             $formulaireConnexion = $this->createFormBuilder(array('allow_extra_fields' =>true))
-            ->add('identifiant', TextType::class, array('label' => 'Identifiant', 'attr' => array('class' =>'form-control', 'placeholder'=> 'Exemple : andre')))
+            ->add('login', TextType::class, array('label' => 'Login', 'attr' => array('class' =>'form-control', 'placeholder'=> 'Exemple : andre')))
             ->add('mdp', PasswordType::class, array('label' => 'Mot de passe','attr' => array('class' => 'form-control', 'placeholder' => 'Exemple : *******')))
             ->add('valider', SubmitType::class, array('label' => 'Se connecter','attr' => array('class' => 'btn btn-primary btn-block')))
             ->getForm();
@@ -43,19 +43,27 @@
                 
                 $donneesFormulaire = $formulaireConnexion->getData();
 
-
                 $modele = new Modele();
-                $unVisiteur = $modele->seConnecterVisiteur($donneesFormulaire['identifiant'], $donneesFormulaire['mdp']); // permet d'appeler la fonction seConnecterVisiteur() par le biai de notre objet $modele 
+                $unVisiteur = $modele->seConnecterVisiteur($donneesFormulaire['login'], $donneesFormulaire['mdp']); // permet d'appeler la fonction seConnecterVisiteur() par le biai de notre objet $modele 
                 if(!empty($unVisiteur)){
-                    return new Response($this->page->render('visiteur/menu/menu.html.twig', array('idVisiteur'=> $donneesFormulaire['identifiant'])));
+
+
+                    // On init la session de l'user authentifié...
+                    $session = new Session();
+                    // On crée les variables dont on aura besoin qui seront active durant la session...
+                    $session->set('id', $unVisiteur[0]['id']);
+                    $session->set('nom', $unVisiteur[0]['nom']);
+                    $session->set('prenom', $unVisiteur[0]['prenom']);
+                    $session->set('login', $unVisiteur[0]['login']);
+                    $session->set('adresse', $unVisiteur[0]['adresse']);
+                    $session->set('ville', $unVisiteur[0]['ville']);
+                    $session->set('dateEmbauche', $unVisiteur[0]['dateEmbauche']);
+
+                    return new Response($this->page->render('visiteur/menu/menu.html.twig', array('login'=> $donneesFormulaire['login'])));
 
                 }else return new Response($this->page->render('visiteur/connexionVisiteur.html.twig', array('formulaireConnexion' => $formulaireConnexion->createView(), 'echecConnexion' => true)));
             }
             
             return new Response($this->page->render('visiteur/connexionVisiteur.html.twig', array('formulaireConnexion' => $formulaireConnexion->createView())));
-
-        
         }
-
-
     }

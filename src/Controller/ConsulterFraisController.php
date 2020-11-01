@@ -26,25 +26,35 @@
         }                     // a toujours avoir dans chaque controlleur
         public function index()
         {
+            $annee = array();
+            for($i = 0; $i < 10; $i++){
+                $y = date('Y') - $i;
+                $annee[$y] = $y;
+              
+            }
+            
             $formConsulterFicheFrais = $this->createFormBuilder(array('allow_extra_fields' =>true))
-            ->add('mois', ChoiceType::class, array(
+            ->add('mois', ChoiceType::class, array('label'=>'', 'attr'=> array('class'=>'form-control'),
                 'choices' => array(
+                    'janvier' => '01',
+                    'fevrier' => '02',
+                    'mars' => '03',
+                    'avril' => '04',
+                    'mai' => '05',
+                    'juin' => '06',
+                    'juillet' => '07',
+                    'aout' => '08',
                     'septembre' => '09',
                     'octobre' => '10',
                     'novembre' => '11',
                     'decembre' => '12',
                 ))
             )
-            ->add('annee', ChoiceType::class, array(
-                'choices' => array(
-                    
-                    '2020' => '2020',
-                    '2019' => '2019',
-                    '2018' => '2018',
-                    '2017' => '2017',
-                ))
+            ->add('annee', ChoiceType::class, array('label'=>'', 'attr'=> array('class'=>'form-control'),
+                'choices' => $annee)
             )
-            ->add('valider', SubmitType::class, array('label' => 'Se connecter','attr' => array('class' => 'btn btn-primary btn-block')))
+
+            ->add('valider', SubmitType::class, array('label' => 'Valider','attr' => array('class' => 'btn btn-primary btn-block')))
             ->getForm();
 
             $request = Request::createFromGlobals();
@@ -53,17 +63,24 @@
             if($formConsulterFicheFrais->isSubmitted()&& $formConsulterFicheFrais->isValid()){
                 $donneesFormulaire = $formConsulterFicheFrais->getData();
 
-                
-
                 $modele = new Modele();
                 $identifiant = 'a17';
                 $date = sprintf('%02d%04d' , $donneesFormulaire['mois'] , $donneesFormulaire['annee']);
-                $uneFicheFrais = $modele->consulterFicheFrais($identifiant,$date); // permet d'appeler la fonction seConnecterVisiteur() par le biai de notre objet $modele
-                var_dump($uneFicheFrais);
+                $uneFicheFrais = $modele->consulterFicheFraisForfait($identifiant,$date); // permet d'appeler la fonction seConnecterVisiteur() par le biai de notre objet $modele
+                
+                
+                
+                //var_dump($fiche);
+                //var_dump($uneFicheFrais);
+                //var_dump($uneFicheFraisForfait);
+                //var_dump($uneFicheFraisHorsForfait);
+
+                // $id = $this->get('session')->get('id'); Pour récuperer l'id du user authentifié
+
                 if(!empty($uneFicheFrais)){
                     return new Response($this->page->render('visiteur/menu/consulter/afficher/afficherFicheFrais.html.twig', array('ficheFrais'=> $uneFicheFrais)));
 
-                }else return new Response($this->page->render('visiteur/menu/menu.html.twig', array('formulaireFicheFrais' => $formConsulterFicheFrais->createView(), 'donneesInvalides' => true)));
+                }else return new Response($this->page->render('visiteur/menu/consulter/consulterFrais.html.twig', array('formConsulterFicheFrais' => $formConsulterFicheFrais->createView(), 'donneesInvalides' => true)));
             
 
             }

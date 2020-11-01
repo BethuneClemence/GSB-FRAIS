@@ -1,4 +1,4 @@
-{% extends 'base.html.twig'%}
+{% extends 'common/dom.html.twig'%}
 {% block title %}- Visiteur{% endblock %}
 
 {% block body %}
@@ -10,12 +10,8 @@
                 <div class="grid">
                     <div class="grid-body">
                         <div class="row">
-                            <div id="connexion" class="col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper">
-                                <img src="{{ asset("assets/images/logoGsb.png")}}" alt="logo" />
-                                <br>
-                                <br>
-                                <a href="{{path("consulterFrais")}}" class="btn btn-primary btn-lg btn-block">Consulter Frais</a>
-                                <a href="{{path("consulterFrais")}}" class="btn btn-primary btn-lg btn-block">Saisir Frais</a>
+                            <div id="connexion" class="col-lg-9 col-md-9 col-sm-9 col-12 mx-auto form-wrapper">
+                                <h1>Bonjour, <b>{{ app.session.get('nom') ~' '~ app.session.get('prenom')}}</b> content de vous revoir</h1>
                             </div>
                         </div>
                     </div>
