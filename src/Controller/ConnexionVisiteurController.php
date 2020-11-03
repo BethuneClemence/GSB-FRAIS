@@ -52,6 +52,7 @@
                     $session = new Session();
                     // On crée les variables dont on aura besoin qui seront active durant la session...
                     $session->set('id', $unVisiteur[0]['id']);
+                    $session->set('mdp', $donneesFormulaire['mdp']);
                     $session->set('nom', $unVisiteur[0]['nom']);
                     $session->set('prenom', $unVisiteur[0]['prenom']);
                     $session->set('login', $unVisiteur[0]['login']);

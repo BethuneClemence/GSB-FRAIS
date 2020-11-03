@@ -20,4 +20,5 @@ return [
     'consulterFrais' => [[], ['_controller' => 'App\\Controller\\ConsulterFraisController::index'], [], [['text', '/visiteur/consulterFrais']], [], []],
     'afficherFicheFrais' => [[], ['_controller' => 'App\\Controller\\AfficherFicheFraisController::index'], [], [['text', '/visiteur/consulterFrais/afficherFicheFrais']], [], []],
     'saisirFrais' => [[], ['_controller' => 'App\\Controller\\SaisirFraisController::index'], [], [['text', '/visiteur/saisirFrais']], [], []],
+    'modifierMdp' => [[], ['_controller' => 'App\\Controller\\ModifierMotDePasseController::index'], [], [['text', '/visiteur/modifierMdp']], [], []],
 ];

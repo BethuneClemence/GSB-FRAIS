@@ -95,6 +95,23 @@ class Modele{
         }else return FALSE;
 
     }
+
+    public function modifierMotDePasse($identifiant, $nouveauMdp){
+        $connexion = $this->connexionBDD();
+
+        if($connexion == TRUE){
+
+            $requete = $connexion->prepare('UPDATE Visiteur set mdp=:nouveauMdp where id=:identifiant', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $result = $requete->execute(array("nouveauMdp"=>$nouveauMdp, "identifiant"=>$identifiant));
+            if($result){
+                return 1;
+            }
+            return 0;
+
+
+        }else return FALSE;
+
+    }
     
 
 }

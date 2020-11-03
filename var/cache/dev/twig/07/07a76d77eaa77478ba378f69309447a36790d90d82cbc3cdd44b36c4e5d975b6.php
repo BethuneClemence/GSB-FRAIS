@@ -98,6 +98,7 @@ class __TwigTemplate_7514bf5115efa4a44d671ccbd6395e87ae16ec6f24687ed8364fe76812e
         // line 14
         echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "session", [], "any", false, false, false, 14), "get", [0 => "nom"], "method", false, false, false, 14) . " ") . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "session", [], "any", false, false, false, 14), "get", [0 => "prenom"], "method", false, false, false, 14)), "html", null, true);
         echo "</b> content de vous revoir</h1>
+                                
                             </div>
                         </div>
                     </div>
@@ -153,6 +154,7 @@ class __TwigTemplate_7514bf5115efa4a44d671ccbd6395e87ae16ec6f24687ed8364fe76812e
                         <div class=\"row\">
                             <div id=\"connexion\" class=\"col-lg-9 col-md-9 col-sm-9 col-12 mx-auto form-wrapper\">
                                 <h1>Bonjour, <b>{{ app.session.get('nom') ~' '~ app.session.get('prenom')}}</b> content de vous revoir</h1>
+                                
                             </div>
                         </div>
                     </div>

@@ -81,12 +81,15 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
                   <h6 class=\"dropdown-title\">Paramètres</h6>
                 </div>
                 <div class=\"dropdown-body border-top pt-0\">
-                  <a class=\"dropdown-grid\">
-                    <i class=\"grid-icon mdi mdi-jira mdi-2x\"></i>
-                    <span class=\"grid-tittle\">Profile</span>
+                  <a href=\"";
+        // line 39
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modifierMdp");
+        echo "\" class=\"dropdown-grid\">
+                    <i class=\"grid-icon mdi mdi-autorenew mdi-3x\"></i>
+                    <span class=\"grid-tittle\">Modifier mdp</span>
                   </a>
-                  <a class=\"dropdown-grid\">
-                    <i class=\"grid-icon mdi mdi-trello mdi-2x\"></i>
+                  <a href=\"\" class=\"dropdown-grid\">
+                    <i class=\"grid-icon mdi mdi-trello mdi-3x\"></i>
                     <span class=\"grid-tittle\">Déconnexion</span>
                   </a>
                 </div>
@@ -120,13 +123,16 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
         // line 68
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("consulterFrais");
         echo "\">
-              <span class=\"link-title\">Consulter Frais</span>
+              <span class=\"link-title\"><b>Consulter Frais</b></span>
               <i class=\"mdi mdi-folder-plus link-icon\"></i>
             </a>
           </li>
           <li>
-            <a href=\"#\">
-              <span class=\"link-title\">Saisir Frais</span>
+            <a href=\"";
+        // line 74
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("saisirFrais");
+        echo "\">
+              <span class=\"link-title\"><b>Saisir Frais</b></span>
               <i class=\"mdi mdi-folder-plus link-icon\"></i>
             </a>
           </li>
@@ -289,7 +295,7 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
 
     public function getDebugInfo()
     {
-        return array (  269 => 93,  265 => 92,  261 => 91,  257 => 90,  253 => 89,  249 => 88,  244 => 87,  234 => 86,  223 => 82,  213 => 81,  201 => 12,  197 => 11,  193 => 10,  189 => 9,  184 => 8,  174 => 7,  156 => 6,  145 => 95,  143 => 86,  139 => 84,  137 => 81,  121 => 68,  111 => 62,  105 => 58,  68 => 23,  60 => 13,  58 => 7,  54 => 6,  47 => 1,);
+        return array (  275 => 93,  271 => 92,  267 => 91,  263 => 90,  259 => 89,  255 => 88,  250 => 87,  240 => 86,  229 => 82,  219 => 81,  207 => 12,  203 => 11,  199 => 10,  195 => 9,  190 => 8,  180 => 7,  162 => 6,  151 => 95,  149 => 86,  145 => 84,  143 => 81,  133 => 74,  124 => 68,  114 => 62,  108 => 58,  86 => 39,  68 => 23,  60 => 13,  58 => 7,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -332,12 +338,12 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
                   <h6 class=\"dropdown-title\">Paramètres</h6>
                 </div>
                 <div class=\"dropdown-body border-top pt-0\">
-                  <a class=\"dropdown-grid\">
-                    <i class=\"grid-icon mdi mdi-jira mdi-2x\"></i>
-                    <span class=\"grid-tittle\">Profile</span>
+                  <a href=\"{{path(\"modifierMdp\")}}\" class=\"dropdown-grid\">
+                    <i class=\"grid-icon mdi mdi-autorenew mdi-3x\"></i>
+                    <span class=\"grid-tittle\">Modifier mdp</span>
                   </a>
-                  <a class=\"dropdown-grid\">
-                    <i class=\"grid-icon mdi mdi-trello mdi-2x\"></i>
+                  <a href=\"\" class=\"dropdown-grid\">
+                    <i class=\"grid-icon mdi mdi-trello mdi-3x\"></i>
                     <span class=\"grid-tittle\">Déconnexion</span>
                   </a>
                 </div>
@@ -362,13 +368,13 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
           <li class=\"nav-category-divider\">Tableau de bord</li>
           <li>
             <a href=\"{{path(\"consulterFrais\")}}\">
-              <span class=\"link-title\">Consulter Frais</span>
+              <span class=\"link-title\"><b>Consulter Frais</b></span>
               <i class=\"mdi mdi-folder-plus link-icon\"></i>
             </a>
           </li>
           <li>
-            <a href=\"#\">
-              <span class=\"link-title\">Saisir Frais</span>
+            <a href=\"{{path(\"saisirFrais\")}}\">
+              <span class=\"link-title\"><b>Saisir Frais</b></span>
               <i class=\"mdi mdi-folder-plus link-icon\"></i>
             </a>
           </li>

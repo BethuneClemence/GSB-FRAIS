@@ -17,3 +17,7 @@ afficherFicheFrais:
 saisirFrais:
   path: /visiteur/saisirFrais
   controller: App\Controller\SaisirFraisController::index
+
+modifierMdp:
+  path: /visiteur/modifierMdp
+  controller: App\Controller\ModifierMotDePasseController::index

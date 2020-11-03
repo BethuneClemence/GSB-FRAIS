@@ -36,12 +36,12 @@
                   <h6 class="dropdown-title">Paramètres</h6>
                 </div>
                 <div class="dropdown-body border-top pt-0">
-                  <a class="dropdown-grid">
-                    <i class="grid-icon mdi mdi-jira mdi-2x"></i>
-                    <span class="grid-tittle">Profile</span>
+                  <a href="{{path("modifierMdp")}}" class="dropdown-grid">
+                    <i class="grid-icon mdi mdi-autorenew mdi-3x"></i>
+                    <span class="grid-tittle">Modifier mdp</span>
                   </a>
-                  <a class="dropdown-grid">
-                    <i class="grid-icon mdi mdi-trello mdi-2x"></i>
+                  <a href="" class="dropdown-grid">
+                    <i class="grid-icon mdi mdi-trello mdi-3x"></i>
                     <span class="grid-tittle">Déconnexion</span>
                   </a>
                 </div>
@@ -66,13 +66,13 @@
           <li class="nav-category-divider">Tableau de bord</li>
           <li>
             <a href="{{path("consulterFrais")}}">
-              <span class="link-title">Consulter Frais</span>
+              <span class="link-title"><b>Consulter Frais</b></span>
               <i class="mdi mdi-folder-plus link-icon"></i>
             </a>
           </li>
           <li>
-            <a href="#">
-              <span class="link-title">Saisir Frais</span>
+            <a href="{{path("saisirFrais")}}">
+              <span class="link-title"><b>Saisir Frais</b></span>
               <i class="mdi mdi-folder-plus link-icon"></i>
             </a>
           </li>

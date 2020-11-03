@@ -64,7 +64,8 @@
                 $donneesFormulaire = $formConsulterFicheFrais->getData();
 
                 $modele = new Modele();
-                $identifiant = 'a17';
+                $identifiant = $this->get('session')->get('id');
+
                 $date = sprintf('%02d%04d' , $donneesFormulaire['mois'] , $donneesFormulaire['annee']);
                 $uneFicheFrais = $modele->consulterFicheFraisForfait($identifiant,$date); // permet d'appeler la fonction seConnecterVisiteur() par le biai de notre objet $modele
                 

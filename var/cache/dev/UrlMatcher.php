@@ -18,6 +18,7 @@ return [
         '/visiteur/consulterFrais' => [[['_route' => 'consulterFrais', '_controller' => 'App\\Controller\\ConsulterFraisController::index'], null, null, null, false, false, null]],
         '/visiteur/consulterFrais/afficherFicheFrais' => [[['_route' => 'afficherFicheFrais', '_controller' => 'App\\Controller\\AfficherFicheFraisController::index'], null, null, null, false, false, null]],
         '/visiteur/saisirFrais' => [[['_route' => 'saisirFrais', '_controller' => 'App\\Controller\\SaisirFraisController::index'], null, null, null, false, false, null]],
+        '/visiteur/modifierMdp' => [[['_route' => 'modifierMdp', '_controller' => 'App\\Controller\\ModifierMotDePasseController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
