@@ -287,7 +287,7 @@
             .sidebar .navigation-menu li .navigation-submenu li:first-child a:after {
               top: 15px; }
           .sidebar .navigation-menu li .navigation-submenu li:nth-child(5n + 1) a:after {
-            background: #4CCEAC; }
+            background: #114DA6; }
           .sidebar .navigation-menu li .navigation-submenu li:nth-child(5n + 2) a:after {
             background: #080E86; }
           .sidebar .navigation-menu li .navigation-submenu li:nth-child(5n + 3) a:after {
@@ -301,12 +301,12 @@
             .sidebar .navigation-menu li .navigation-submenu li .navigation-submenu li a {
               opacity: 0.5; }
       .sidebar .navigation-menu li.active a .link-title {
-        color: #4CCEAC; }
+        color: #114DA6; }
       .sidebar .navigation-menu li.active a .link-icon {
-        color: #4CCEAC; }
+        color: #114DA6; }
     .sidebar .navigation-menu > li:not(.nav-category-divider):hover a:not([aria-expanded="true"]) .link-icon {
       margin-right: 20px;
-      color: #4CCEAC; }
+      color: #114DA6; }
     .sidebar .navigation-menu > li:not(.nav-category-divider) > a[data-toggle="collapse"] {
       position: relative; }
       .sidebar .navigation-menu > li:not(.nav-category-divider) > a[data-toggle="collapse"]:after {
@@ -493,3 +493,7 @@ footer {
     padding: 80px 20px 0px 20px; } }
 
 /*# sourceMappingURL=style.css.map */
+
+.titrePage{
+  color: #080E86;
+}

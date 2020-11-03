@@ -15,15 +15,17 @@
     <body>
         
         {% block body %}
+
         {% endblock %}
 
         {% block javascripts %}
             {# <script type="text/javascript" src="{{ asset("assets/js/bootstrap.min.js") }}"></script>
             <script type="text/javascript" src="{{ asset("assets/js/bootstrap.js") }}"></script> #}
-
+            
             <script src="{{ asset("assets/vendors/js/core.js")}}"></script>
             <script src="{{ asset("assets/vendors/js/vendor.addons.js")}}"></script>
             <script src="{{ asset("assets/js/template.js")}}"></script>
+            
         {% endblock %}
 
     </body>

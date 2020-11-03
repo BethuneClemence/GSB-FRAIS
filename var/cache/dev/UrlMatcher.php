@@ -14,6 +14,11 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\AccueilController::index'], null, null, null, false, false, null]],
+        '/visiteur' => [[['_route' => 'seConnecterVisiteur', '_controller' => 'App\\Controller\\ConnexionVisiteurController::index'], null, null, null, false, false, null]],
+        '/visiteur/consulterFrais' => [[['_route' => 'consulterFrais', '_controller' => 'App\\Controller\\ConsulterFraisController::index'], null, null, null, false, false, null]],
+        '/visiteur/consulterFrais/afficherFicheFrais' => [[['_route' => 'afficherFicheFrais', '_controller' => 'App\\Controller\\AfficherFicheFraisController::index'], null, null, null, false, false, null]],
+        '/visiteur/saisirFrais' => [[['_route' => 'saisirFrais', '_controller' => 'App\\Controller\\SaisirFraisController::index'], null, null, null, false, false, null]],
+        '/visiteur/modifierMdp' => [[['_route' => 'modifierMdp', '_controller' => 'App\\Controller\\ModifierMotDePasseController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

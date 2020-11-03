@@ -1,3 +1,23 @@
 accueil:
   path: /
   controller: App\Controller\AccueilController::index
+
+seConnecterVisiteur:
+  path: /visiteur
+  controller: App\Controller\ConnexionVisiteurController::index
+
+consulterFrais:
+  path: /visiteur/consulterFrais
+  controller: App\Controller\ConsulterFraisController::index
+
+afficherFicheFrais:
+  path: /visiteur/consulterFrais/afficherFicheFrais
+  controller: App\Controller\AfficherFicheFraisController::index
+
+saisirFrais:
+  path: /visiteur/saisirFrais
+  controller: App\Controller\SaisirFraisController::index
+
+modifierMdp:
+  path: /visiteur/modifierMdp
+  controller: App\Controller\ModifierMotDePasseController::index

@@ -16,4 +16,9 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\AccueilController::index'], [], [['text', '/']], [], []],
+    'seConnecterVisiteur' => [[], ['_controller' => 'App\\Controller\\ConnexionVisiteurController::index'], [], [['text', '/visiteur']], [], []],
+    'consulterFrais' => [[], ['_controller' => 'App\\Controller\\ConsulterFraisController::index'], [], [['text', '/visiteur/consulterFrais']], [], []],
+    'afficherFicheFrais' => [[], ['_controller' => 'App\\Controller\\AfficherFicheFraisController::index'], [], [['text', '/visiteur/consulterFrais/afficherFicheFrais']], [], []],
+    'saisirFrais' => [[], ['_controller' => 'App\\Controller\\SaisirFraisController::index'], [], [['text', '/visiteur/saisirFrais']], [], []],
+    'modifierMdp' => [[], ['_controller' => 'App\\Controller\\ModifierMotDePasseController::index'], [], [['text', '/visiteur/modifierMdp']], [], []],
 ];
