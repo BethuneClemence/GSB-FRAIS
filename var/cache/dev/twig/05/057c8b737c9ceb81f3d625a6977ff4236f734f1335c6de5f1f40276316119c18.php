@@ -86,59 +86,61 @@ class __TwigTemplate_6cb7d98154f45ef81c4b1a629fa506fc4947753ad1bfe300832ab803470
 
         // line 5
         echo "<div class=\"authentication-theme auth-style_1\">
+  <h1 style=\"text-align:center; margin-bottom:40px; color: #114da6; \"><b>Modifier mot de passe</b></h1>
   <div class=\"row\">
     <div class=\"col-lg-5 col-md-7 col-sm-9 col-11 mx-auto\">
         <div class=\"grid\">
            <div class=\"grid-body\">
               <div class=\"row\">
                 <div class=\"col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper\">
+                
                     ";
-        // line 12
+        // line 14
         if (array_key_exists("motDePasseNonIdentique", $context)) {
-            // line 13
+            // line 15
             echo "                      <div class=\"alert alert-warning\" role=\"alert\">
                         Les mots de passes ne sont pas identiques, veuillez recommencer ! 
                       </div>
                     ";
         }
-        // line 17
+        // line 19
         echo "                    ";
         if (array_key_exists("ancienMdpFaux", $context)) {
-            // line 18
+            // line 20
             echo "                      <div class=\"alert alert-warning\" role=\"alert\">
                         L'ancien mot de passse est incorrect, veuillez recommencer ! 
                       </div>
                     ";
         }
-        // line 22
-        echo "                    ";
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 22, $this->source); })()), 'form_start');
-        echo "
-                        <div class=\"form-group input-rounded\">
-                        ";
         // line 24
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 24, $this->source); })()), "ancien", [], "any", false, false, false, 24), 'row');
+        echo "                    ";
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 24, $this->source); })()), 'form_start');
+        echo "
+                        <div class=\"form-group input-rounded\">
+                        ";
+        // line 26
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 26, $this->source); })()), "ancien", [], "any", false, false, false, 26), 'row');
         echo "
                         </div>
                         <div class=\"form-group input-rounded\">
                         ";
-        // line 27
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 27, $this->source); })()), "nvxMdp", [], "any", false, false, false, 27), 'row');
+        // line 29
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 29, $this->source); })()), "nvxMdp", [], "any", false, false, false, 29), 'row');
         echo "
                         </div>
                         <div class=\"form-group input-rounded\">
-                        ";
-        // line 30
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 30, $this->source); })()), "confirmNvxMdp", [], "any", false, false, false, 30), 'row');
-        echo "
-                        </div>
                         ";
         // line 32
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 32, $this->source); })()), "valide", [], "any", false, false, false, 32), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 32, $this->source); })()), "confirmNvxMdp", [], "any", false, false, false, 32), 'row');
+        echo "
+                        </div>
+                        ";
+        // line 34
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 34, $this->source); })()), "valide", [], "any", false, false, false, 34), 'row');
         echo "
                     ";
-        // line 33
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 33, $this->source); })()), 'form_end');
+        // line 35
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireModifierMotDePasse"]) || array_key_exists("formulaireModifierMotDePasse", $context) ? $context["formulaireModifierMotDePasse"] : (function () { throw new RuntimeError('Variable "formulaireModifierMotDePasse" does not exist.', 35, $this->source); })()), 'form_end');
         echo "
 
                 </div>
@@ -170,7 +172,7 @@ class __TwigTemplate_6cb7d98154f45ef81c4b1a629fa506fc4947753ad1bfe300832ab803470
 
     public function getDebugInfo()
     {
-        return array (  141 => 33,  137 => 32,  132 => 30,  126 => 27,  120 => 24,  114 => 22,  108 => 18,  105 => 17,  99 => 13,  97 => 12,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  143 => 35,  139 => 34,  134 => 32,  128 => 29,  122 => 26,  116 => 24,  110 => 20,  107 => 19,  101 => 15,  99 => 14,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -180,12 +182,14 @@ class __TwigTemplate_6cb7d98154f45ef81c4b1a629fa506fc4947753ad1bfe300832ab803470
 
 {% block body %}
 <div class=\"authentication-theme auth-style_1\">
+  <h1 style=\"text-align:center; margin-bottom:40px; color: #114da6; \"><b>Modifier mot de passe</b></h1>
   <div class=\"row\">
     <div class=\"col-lg-5 col-md-7 col-sm-9 col-11 mx-auto\">
         <div class=\"grid\">
            <div class=\"grid-body\">
               <div class=\"row\">
                 <div class=\"col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper\">
+                
                     {% if motDePasseNonIdentique is defined %}
                       <div class=\"alert alert-warning\" role=\"alert\">
                         Les mots de passes ne sont pas identiques, veuillez recommencer ! 

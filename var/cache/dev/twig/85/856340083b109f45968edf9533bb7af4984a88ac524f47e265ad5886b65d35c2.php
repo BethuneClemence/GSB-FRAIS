@@ -76,7 +76,7 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
               <a class=\"nav-link\" href=\"#\" id=\"appsDropdown\" data-toggle=\"dropdown\" aria-expanded=\"false\">
                 <i class=\"mdi mdi-apps mdi-1x\"></i>
               </a>
-              <div class=\"dropdown-menu navbar-dropdown dropdown-menu-right\" aria-labelledby=\"appsDropdown\">
+              <div class=\"dropdown-menu navbar-dropdown dropdown-menu-right\" style=\"text-align:center\" aria-labelledby=\"appsDropdown\">
                 <div class=\"dropdown-header\">
                   <h6 class=\"dropdown-title\">Paramètres</h6>
                 </div>
@@ -85,11 +85,14 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
         // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modifierMdp");
         echo "\" class=\"dropdown-grid\">
-                    <i class=\"grid-icon mdi mdi-autorenew mdi-3x\"></i>
+                    <i class=\"grid-icon mdi mdi-lock-outline  mdi-3x\"></i>
                     <span class=\"grid-tittle\">Modifier mdp</span>
                   </a>
-                  <a href=\"\" class=\"dropdown-grid\">
-                    <i class=\"grid-icon mdi mdi-trello mdi-3x\"></i>
+                  <a href=\"";
+        // line 43
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
+        echo "\" class=\"dropdown-grid\">
+                    <i class=\"grid-icon mdi mdi-logout mdi-3x\"></i>
                     <span class=\"grid-tittle\">Déconnexion</span>
                   </a>
                 </div>
@@ -295,7 +298,7 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
 
     public function getDebugInfo()
     {
-        return array (  275 => 93,  271 => 92,  267 => 91,  263 => 90,  259 => 89,  255 => 88,  250 => 87,  240 => 86,  229 => 82,  219 => 81,  207 => 12,  203 => 11,  199 => 10,  195 => 9,  190 => 8,  180 => 7,  162 => 6,  151 => 95,  149 => 86,  145 => 84,  143 => 81,  133 => 74,  124 => 68,  114 => 62,  108 => 58,  86 => 39,  68 => 23,  60 => 13,  58 => 7,  54 => 6,  47 => 1,);
+        return array (  278 => 93,  274 => 92,  270 => 91,  266 => 90,  262 => 89,  258 => 88,  253 => 87,  243 => 86,  232 => 82,  222 => 81,  210 => 12,  206 => 11,  202 => 10,  198 => 9,  193 => 8,  183 => 7,  165 => 6,  154 => 95,  152 => 86,  148 => 84,  146 => 81,  136 => 74,  127 => 68,  117 => 62,  111 => 58,  93 => 43,  86 => 39,  68 => 23,  60 => 13,  58 => 7,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -333,17 +336,17 @@ class __TwigTemplate_4e9ec68743e94a52939827bded552262aee2f597fba1d96153ac564e244
               <a class=\"nav-link\" href=\"#\" id=\"appsDropdown\" data-toggle=\"dropdown\" aria-expanded=\"false\">
                 <i class=\"mdi mdi-apps mdi-1x\"></i>
               </a>
-              <div class=\"dropdown-menu navbar-dropdown dropdown-menu-right\" aria-labelledby=\"appsDropdown\">
+              <div class=\"dropdown-menu navbar-dropdown dropdown-menu-right\" style=\"text-align:center\" aria-labelledby=\"appsDropdown\">
                 <div class=\"dropdown-header\">
                   <h6 class=\"dropdown-title\">Paramètres</h6>
                 </div>
                 <div class=\"dropdown-body border-top pt-0\">
                   <a href=\"{{path(\"modifierMdp\")}}\" class=\"dropdown-grid\">
-                    <i class=\"grid-icon mdi mdi-autorenew mdi-3x\"></i>
+                    <i class=\"grid-icon mdi mdi-lock-outline  mdi-3x\"></i>
                     <span class=\"grid-tittle\">Modifier mdp</span>
                   </a>
-                  <a href=\"\" class=\"dropdown-grid\">
-                    <i class=\"grid-icon mdi mdi-trello mdi-3x\"></i>
+                  <a href=\"{{path(\"accueil\")}}\" class=\"dropdown-grid\">
+                    <i class=\"grid-icon mdi mdi-logout mdi-3x\"></i>
                     <span class=\"grid-tittle\">Déconnexion</span>
                   </a>
                 </div>
