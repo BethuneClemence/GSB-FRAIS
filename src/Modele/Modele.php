@@ -112,6 +112,42 @@ class Modele{
         }else return FALSE;
 
     }
+
+
+    public function addLigneFraisForfait($identifiant, $mois, $forfaitEtape, $fraisKm, $nuiteeHotel, $repasRestaurant){
+
+        $connexion = $this->connexionBDD();
+        if($connexion == TRUE){
+
+            if($forfaitEtape != 0){
+                $requete = $connexion->prepare('INSERT INTO LigneFraisForfait VALUES(:id, :mois, :presta, :forfaitEtape)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("id"=>$identifiant, "mois"=>$mois, "presta"=>"ETP", "forfaitEtape"=>$forfaitEtape));
+            }
+
+            if($fraisKm != 0){
+                $requete = $connexion->prepare('INSERT INTO LigneFraisForfait VALUES(:id, :mois, :presta, :fraisKm)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("id"=>$identifiant, "mois"=>$mois, "presta"=>"KM","fraisKm"=>$fraisKm));
+            }
+
+            if($nuiteeHotel != 0){
+                $requete = $connexion->prepare('INSERT INTO LigneFraisForfait VALUES(:id, :mois, :presta, :nuiteeHotel)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("id"=>$identifiant, "mois"=>$mois, "presta"=>"NUI", "nuiteeHotel"=>$nuiteeHotel));
+            }
+
+            if($repasRestaurant != 0){
+                $requete = $connexion->prepare('INSERT INTO LigneFraisForfait VALUES(:id, :mois, :presta, :repasRestaurant)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("id"=>$identifiant, "mois"=>$mois, "presta"=>"REP","repasRestaurant"=>$repasRestaurant));
+            }
+            
+            return TRUE;
+
+        }else return FALSE;
+
+    }
+
+
+
+    
     
 
 }

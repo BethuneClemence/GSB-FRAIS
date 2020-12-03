@@ -33,13 +33,13 @@
             $formSaisirFrais = $this->createFormBuilder(array('allow_extra_fields' =>true))
             
             ->add('mois', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
-            ->add('forfaiteEtape', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
+            ->add('forfaitEtape', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
             ->add('fraisKm', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
             ->add('nuiteeHotel', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
             ->add('repasRestaurant', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
-            ->add('date', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
-            ->add('libelle', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
-            ->add('montant', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
+            // ->add('date', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
+            // ->add('libelle', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
+            // ->add('montant', TextType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
            
             ->add('envoyer', SubmitType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
             ->add('annuler', ResetType::class, array('label'=>'', 'attr'=> array('class'=>'form-control')))
@@ -51,24 +51,36 @@
 
             $modele = new Modele();
             $identifiant = $this->get('session')->get('id');
-            $date = date('mY');
+            if(date('d') < 9){
+                if(date('m') == 1){
+                    $date = '12'.date('Y');
+                }else{
+                    $date = strval(date('m')- 1).date('Y');
+                }
+                
+            }else{
+                $date = date('mY');
+            }
             $uneFicheFrais = $modele->consulterFicheFrais($identifiant,$date);
                     
             // inserer dans la table ligneFraisHorsForfait
-            // updater ou inserer dans la table ligneFraisForfait
-            
-            
-            
-                    
+            // updater ou inserer dans la table ligneFraisForfait  
             if($formSaisirFrais->isSubmitted() && $formSaisirFrais->isValid()){
 
-                
-                
-                
-                if(!empty($uneFicheFrais)){
-                    return new Response($this->page->render('visiteur/menu/saisir/saisirFicheFrais.html.twig', array('ficheFrais'=> $uneFicheFrais)));
+                $data = $formSaisirFrais->getData();
+                $mois = $date;
+                $forfaitEtape = $data['forfaitEtape'];
+                $fraisKm = $data['fraisKm'];
+                $nuiteeHotel = $data['nuiteeHotel'];
+                $repasRestaurant = $data['repasRestaurant'];
 
-                }else return new Response($this->page->render('visiteur/menu/saisir/saisirFicheFrais.html.twig', array('ficheFrais'=> $uneFicheFrais)));
+                $modele->addLigneFraisForfait($identifiant, $mois, $forfaitEtape, $fraisKm, $nuiteeHotel, $repasRestaurant);
+
+                if(!empty($uneFicheFrais)){
+
+                    return new Response($this->page->render('visiteur/menu/saisir/saisirFicheFrais.html.twig', array('ficheFrais'=> $uneFicheFrais, 'formulaireSaisirFrais' => $formSaisirFrais->createView())));
+
+                }else return new Response($this->page->render('visiteur/menu/saisir/saisirFicheFrais.html.twig', array('ficheFrais'=> $uneFicheFrais, 'formulaireSaisirFrais' => $formSaisirFrais->createView())));
             
             
 
