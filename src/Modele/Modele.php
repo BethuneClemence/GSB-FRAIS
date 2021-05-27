@@ -44,12 +44,14 @@ class Modele{
 
     }
 
+    
+
     public function consulterFicheFrais($identifiant, $date){
         $connexion = $this->connexionBDD();
 
         if($connexion == TRUE){
 
-            $requete = $connexion->prepare('SELECT * FROM FicheFrais WHERE idVisiteur = :id AND mois = :date', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $requete = $connexion->prepare('SELECT * FROM FicheFrais as ff INNER JOIN Etat as e ON e.id = ff.idEtat WHERE ff.idVisiteur = :id AND ff.mois = :date', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 
             $requete->execute(array("id"=>$identifiant, "date"=>$date));
 
@@ -67,10 +69,9 @@ class Modele{
         if($connexion == TRUE){
 
             // $requete = $connexion->prepare('SELECT * FROM LigneFraisForfait WHERE idVisiteur = :id AND mois = :date', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-            $requete = $connexion->prepare('SELECT * FROM FicheFrais as ff INNER JOIN LigneFraisForfait as lff ON lff.idVisiteur = ff.idVisiteur INNER JOIN Etat as E ON E.id = ff.idEtat INNER JOIN LigneFraisHorsForfait as lfhf ON lfhf.idVisiteur = ff.idVisiteur WHERE ff.idVisiteur = :id AND ff.mois = :date', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $requete = $connexion->prepare('SELECT * FROM LigneFraisForfait WHERE idVisiteur = :id AND mois = :date', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $requete->execute(array("id"=>$identifiant, "date"=>$date));
             
-
             $resultat = $requete->fetchAll();
             return $resultat;
 
@@ -112,6 +113,106 @@ class Modele{
         }else return FALSE;
 
     }
-    
+
+    public function creerFicheFrais($identifiant, $mois){
+
+        $connexion = $this->connexionBDD();
+        if($connexion == TRUE){
+
+            $requete = $connexion->prepare('INSERT into FicheFrais values(:idVisiteur, :mois)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $resultat = $requete->execute(array("idVisiteur"=>$idVisiteur, "mois"=>$mois));
+            
+            return $resultat;
+        }
+
+    }
+
+    public function addLigneFraisForfait($identifiant, $mois, $forfaitEtape, $fraisKm, $nuiteeHotel, $repasRestaurant){
+
+        $connexion = $this->connexionBDD();
+        if($connexion == TRUE){
+            
+            $requete = $connexion->prepare('INSERT INTO FicheFrais (idVisiteur, mois) VALUES(:id, :mois)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            $result = $requete->execute(array("id"=>$identifiant, "mois"=>$mois));
+            
+            if($forfaitEtape == 0){
+                $requete = $connexion->prepare('INSERT INTO LigneFraisForfait VALUES(:id, :mois, :presta, :forfaitEtape)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("id"=>$identifiant, "mois"=>$mois, "presta"=>"ETP", "forfaitEtape"=>$forfaitEtape));
+            }
+
+            if($fraisKm == 0){
+                $requete = $connexion->prepare('INSERT INTO LigneFraisForfait VALUES(:id, :mois, :presta, :fraisKm)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("id"=>$identifiant, "mois"=>$mois, "presta"=>"KM","fraisKm"=>$fraisKm));
+            }
+
+            if($nuiteeHotel == 0){
+                $requete = $connexion->prepare('INSERT INTO LigneFraisForfait VALUES(:id, :mois, :presta, :nuiteeHotel)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("id"=>$identifiant, "mois"=>$mois, "presta"=>"NUI", "nuiteeHotel"=>$nuiteeHotel));
+            }
+
+            if($repasRestaurant == 0){
+                $requete = $connexion->prepare('INSERT INTO LigneFraisForfait VALUES(:id, :mois, :presta, :repasRestaurant)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("id"=>$identifiant, "mois"=>$mois, "presta"=>"REP","repasRestaurant"=>$repasRestaurant));
+            }
+            return TRUE;
+
+        }else return FALSE;
+
+    }
+
+
+    public function updateLigneFraisForfait($identifiant, $mois, $forfaitEtape, $fraisKm, $nuiteeHotel, $repasRestaurant){
+
+        $connexion = $this->connexionBDD();
+        if($connexion == TRUE){
+            
+            if($forfaitEtape != NULL){
+                $requete = $connexion->prepare('UPDATE LigneFraisForfait set quantite=:forfaitEtape where idVisiteur=:identifiant and mois=:mois and idFraisForfait=:presta', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("identifiant"=>$identifiant, "mois"=>$mois, "presta"=>"ETP", "forfaitEtape"=> $forfaitEtape));
+            }
+
+            if($fraisKm != NULL){
+                $requete = $connexion->prepare('UPDATE LigneFraisForfait set quantite=:fraisKm where idVisiteur=:identifiant and mois=:mois and idFraisForfait=:presta', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("identifiant"=>$identifiant, "mois"=>$mois,"presta"=>"KM", "fraisKm"=>$fraisKm));
+            }
+
+            if($nuiteeHotel != NULL){
+                $requete = $connexion->prepare('UPDATE LigneFraisForfait set quantite=:nuiteeHotel where idVisiteur=:identifiant and mois=:mois and idFraisForfait=:presta', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("identifiant"=>$identifiant, "mois"=>$mois,"presta"=>"NUI", "nuiteeHotel"=>$nuiteeHotel));
+            }
+
+            $requete = $connexion->prepare('UPDATE LigneFraisForfait set quantite=:repasRestaurant where idVisiteur=:identifiant and mois=:mois and idFraisForfait=:presta', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array("identifiant"=>$identifiant, "mois"=>$mois,"presta"=>"REP", "repasRestaurant"=>$repasRestaurant));
+            
+            return TRUE;
+
+        }else return FALSE;
+
+    }
+
+    public function addLigneFraisHorsForfait($identifiant, $mois, $date, $libelle, $montant){
+
+        $connexion = $this->connexionBDD();
+        if($connexion == TRUE){
+
+            try {
+                $requete = $connexion->prepare('Delete from LigneFraisHorsForfait where date is null and mois = :mois and idVisiteur =:id');
+                $result = $requete->execute(array("mois"=>$mois, "id"=>$identifiant));
+                $requete = $connexion->prepare('INSERT INTO `LigneFraisHorsForfait` ( `idVisiteur` , `mois` , `libelle`, `date`, `montant`) VALUES  ( :idVisiteur , :mois , :libelle, :dateHF, :montant)', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+                $result = $requete->execute(array( "idVisiteur"=>$identifiant, "mois"=>$mois, "libelle"=>$libelle , "dateHF"=>$date , "montant"=>$montant));
+                
+                return $result;
+                
+                
+            } catch (Exception $e) {
+                echo 'Exception reçue : ',  $e->getMessage(), "\n";
+            }
+            return null;
+            
+           
+
+        }
+
+    }
 
 }

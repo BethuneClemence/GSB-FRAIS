@@ -87,90 +87,128 @@ class __TwigTemplate_ab75053e1ceb98008a64509d55e4e274e020817c9e0e59545603ff6fa6e
         // line 5
         echo "
     <div class=\"authentication-theme auth-style_1\">
+        <h1 style=\"text-align:center; margin-bottom:40px; color: #114da6; \"><b>Saisir une fiche</b></h1>
         <div class=\"row\">
-            <div class=\"col-lg-5 col-md-7 col-sm-9 col-11 mx-auto\">
+            <div class=\"col-lg-5 col-md-7 col-sm-9 col-6 mx-auto\">
                 <div class=\"grid\">
                     <div class=\"grid-body\">
                         <div class=\"item-wrapper\">
                             ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 12, $this->source); })()), 'form_start');
+        // line 13
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 13, $this->source); })()), 'form_start');
         echo "
-                            <h2 class=\"grid-header\">Période d'engagement : </h2>
-                                <div class =\"form-group\">
-                                    ";
-        // line 15
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 15, $this->source); })()), "mois", [], "any", false, false, false, 15), 'row');
-        echo "  
-                                </div>
+                                
+                                <h2 class=\"grid-header\">Frais au forfait : </h2>
+                                
                                 <div class =\"form-group\">                          
                                     ";
         // line 18
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 18, $this->source); })()), "annee", [], "any", false, false, false, 18), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 18, $this->source); })()), "mois", [], "any", false, false, false, 18), 'row', ["value" => (isset($context["date"]) || array_key_exists("date", $context) ? $context["date"] : (function () { throw new RuntimeError('Variable "date" does not exist.', 18, $this->source); })()), "disabled" => "disabled"]);
         echo "
                                 </div>
-                                <h2 class=\"grid-header\">Frais au forfait : </h2>
-                                <div class =\"form-group\">                          
-                                    ";
-        // line 22
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 22, $this->source); })()), "repas", [], "any", false, false, false, 22), 'row');
+
+                                
+                                    <div class =\"form-group\">                          
+                                        ";
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 23, $this->source); })()), "forfaitEtape", [], "any", false, false, false, 23), 'row', ["value" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFraisForfait"]) || array_key_exists("ficheFraisForfait", $context) ? $context["ficheFraisForfait"] : (function () { throw new RuntimeError('Variable "ficheFraisForfait" does not exist.', 23, $this->source); })()), 0, [], "array", false, false, false, 23), "quantite", [], "array", false, false, false, 23)]);
         echo "
-                                </div>
-                                <div class =\"form-group\">                          
-                                    ";
-        // line 25
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 25, $this->source); })()), "nuitee", [], "any", false, false, false, 25), 'row');
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        ";
+        // line 26
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 26, $this->source); })()), "fraisKm", [], "any", false, false, false, 26), 'row', ["value" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFraisForfait"]) || array_key_exists("ficheFraisForfait", $context) ? $context["ficheFraisForfait"] : (function () { throw new RuntimeError('Variable "ficheFraisForfait" does not exist.', 26, $this->source); })()), 1, [], "array", false, false, false, 26), "quantite", [], "array", false, false, false, 26)]);
         echo "
-                                </div>
-                                <div class =\"form-group\">                          
-                                    ";
-        // line 28
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 28, $this->source); })()), "km", [], "any", false, false, false, 28), 'row');
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        ";
+        // line 29
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 29, $this->source); })()), "nuiteeHotel", [], "any", false, false, false, 29), 'row', ["value" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFraisForfait"]) || array_key_exists("ficheFraisForfait", $context) ? $context["ficheFraisForfait"] : (function () { throw new RuntimeError('Variable "ficheFraisForfait" does not exist.', 29, $this->source); })()), 2, [], "array", false, false, false, 29), "quantite", [], "array", false, false, false, 29)]);
         echo "
-                                </div>
-                                 <h2 class=\"grid-header\">Hors classification : </h2>
-                                <div class =\"form-group\">                          
-                                    ";
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        ";
         // line 32
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 32, $this->source); })()), "nbJustificatif", [], "any", false, false, false, 32), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 32, $this->source); })()), "repasRestaurant", [], "any", false, false, false, 32), 'row', ["value" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFraisForfait"]) || array_key_exists("ficheFraisForfait", $context) ? $context["ficheFraisForfait"] : (function () { throw new RuntimeError('Variable "ficheFraisForfait" does not exist.', 32, $this->source); })()), 3, [], "array", false, false, false, 32), "quantite", [], "array", false, false, false, 32)]);
+        echo "
+                                    </div>
+                            
+                                
+                                <div class =\"form-group\">
+                                    ";
+        // line 37
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 37, $this->source); })()), "envoyer", [], "any", false, false, false, 37), 'row');
         echo "
                                 </div>
                                 <div class =\"form-group\">                          
                                     ";
-        // line 35
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 35, $this->source); })()), "montantTotal", [], "any", false, false, false, 35), 'row');
-        echo "
-                                </div>
-                                <div class =\"form-group\">                          
-                                    ";
-        // line 38
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 38, $this->source); })()), "envoyer", [], "any", false, false, false, 38), 'row');
-        echo "
-                                </div>
-                                <div class =\"form-group\">                          
-                                    ";
-        // line 41
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 41, $this->source); })()), "annuler", [], "any", false, false, false, 41), 'row');
+        // line 40
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 40, $this->source); })()), "annuler", [], "any", false, false, false, 40), 'row');
         echo "
                                 </div>
                             ";
-        // line 43
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 43, $this->source); })()), 'form_end');
+        // line 42
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireSaisirFrais"]) || array_key_exists("formulaireSaisirFrais", $context) ? $context["formulaireSaisirFrais"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFrais" does not exist.', 42, $this->source); })()), 'form_end');
+        echo "
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=\"col-lg-5 col-md-7 col-sm-9 col-6 mx-auto\">
+                <div class=\"grid\">
+                    <div class=\"grid-body\">
+                        <div class=\"item-wrapper\">
+                            ";
+        // line 51
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireSaisirFraisHorsForfait"]) || array_key_exists("formulaireSaisirFraisHorsForfait", $context) ? $context["formulaireSaisirFraisHorsForfait"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFraisHorsForfait" does not exist.', 51, $this->source); })()), 'form_start');
+        echo "
+                                
+                                <h2 class=\"grid-header\">Frais Hors forfait : </h2>
+                            
+                                    <div class =\"form-group\">                          
+                                        ";
+        // line 56
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFraisHorsForfait"]) || array_key_exists("formulaireSaisirFraisHorsForfait", $context) ? $context["formulaireSaisirFraisHorsForfait"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFraisHorsForfait" does not exist.', 56, $this->source); })()), "date", [], "any", false, false, false, 56), 'row');
+        echo "
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        ";
+        // line 59
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFraisHorsForfait"]) || array_key_exists("formulaireSaisirFraisHorsForfait", $context) ? $context["formulaireSaisirFraisHorsForfait"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFraisHorsForfait" does not exist.', 59, $this->source); })()), "libelle", [], "any", false, false, false, 59), 'row');
+        echo "
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        ";
+        // line 62
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFraisHorsForfait"]) || array_key_exists("formulaireSaisirFraisHorsForfait", $context) ? $context["formulaireSaisirFraisHorsForfait"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFraisHorsForfait" does not exist.', 62, $this->source); })()), "montant", [], "any", false, false, false, 62), 'row');
+        echo "
+                                    </div>
+                                
+                                <div class =\"form-group\">
+                                    ";
+        // line 66
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFraisHorsForfait"]) || array_key_exists("formulaireSaisirFraisHorsForfait", $context) ? $context["formulaireSaisirFraisHorsForfait"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFraisHorsForfait" does not exist.', 66, $this->source); })()), "envoyer", [], "any", false, false, false, 66), 'row');
+        echo "
+                                </div>
+                                <div class =\"form-group\">                          
+                                    ";
+        // line 69
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulaireSaisirFraisHorsForfait"]) || array_key_exists("formulaireSaisirFraisHorsForfait", $context) ? $context["formulaireSaisirFraisHorsForfait"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFraisHorsForfait" does not exist.', 69, $this->source); })()), "annuler", [], "any", false, false, false, 69), 'row');
+        echo "
+                                </div>
+                            ";
+        // line 71
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaireSaisirFraisHorsForfait"]) || array_key_exists("formulaireSaisirFraisHorsForfait", $context) ? $context["formulaireSaisirFraisHorsForfait"] : (function () { throw new RuntimeError('Variable "formulaireSaisirFraisHorsForfait" does not exist.', 71, $this->source); })()), 'form_end');
         echo "
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        
     </div>
 
-
-
-    
-                        
-                    
-                             
-   
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -192,7 +230,7 @@ class __TwigTemplate_ab75053e1ceb98008a64509d55e4e274e020817c9e0e59545603ff6fa6e
 
     public function getDebugInfo()
     {
-        return array (  158 => 43,  153 => 41,  147 => 38,  141 => 35,  135 => 32,  128 => 28,  122 => 25,  116 => 22,  109 => 18,  103 => 15,  97 => 12,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  201 => 71,  196 => 69,  190 => 66,  183 => 62,  177 => 59,  171 => 56,  163 => 51,  151 => 42,  146 => 40,  140 => 37,  132 => 32,  126 => 29,  120 => 26,  114 => 23,  106 => 18,  98 => 13,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -203,37 +241,36 @@ class __TwigTemplate_ab75053e1ceb98008a64509d55e4e274e020817c9e0e59545603ff6fa6e
 {% block body %}
 
     <div class=\"authentication-theme auth-style_1\">
+        <h1 style=\"text-align:center; margin-bottom:40px; color: #114da6; \"><b>Saisir une fiche</b></h1>
         <div class=\"row\">
-            <div class=\"col-lg-5 col-md-7 col-sm-9 col-11 mx-auto\">
+            <div class=\"col-lg-5 col-md-7 col-sm-9 col-6 mx-auto\">
                 <div class=\"grid\">
                     <div class=\"grid-body\">
                         <div class=\"item-wrapper\">
                             {{form_start(formulaireSaisirFrais)}}
-                            <h2 class=\"grid-header\">Période d'engagement : </h2>
-                                <div class =\"form-group\">
-                                    {{form_row(formulaireSaisirFrais.mois)}}  
-                                </div>
-                                <div class =\"form-group\">                          
-                                    {{form_row(formulaireSaisirFrais.annee)}}
-                                </div>
+                                
                                 <h2 class=\"grid-header\">Frais au forfait : </h2>
+                                
                                 <div class =\"form-group\">                          
-                                    {{form_row(formulaireSaisirFrais.repas)}}
+                                    {{form_row(formulaireSaisirFrais.mois, {'value': date, 'disabled': 'disabled'})}}
                                 </div>
-                                <div class =\"form-group\">                          
-                                    {{form_row(formulaireSaisirFrais.nuitee)}}
-                                </div>
-                                <div class =\"form-group\">                          
-                                    {{form_row(formulaireSaisirFrais.km)}}
-                                </div>
-                                 <h2 class=\"grid-header\">Hors classification : </h2>
-                                <div class =\"form-group\">                          
-                                    {{form_row(formulaireSaisirFrais.nbJustificatif)}}
-                                </div>
-                                <div class =\"form-group\">                          
-                                    {{form_row(formulaireSaisirFrais.montantTotal)}}
-                                </div>
-                                <div class =\"form-group\">                          
+
+                                
+                                    <div class =\"form-group\">                          
+                                        {{form_row(formulaireSaisirFrais.forfaitEtape, {'value':ficheFraisForfait[0]['quantite']})}}
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        {{form_row(formulaireSaisirFrais.fraisKm,{'value':ficheFraisForfait[1]['quantite']})}}
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        {{form_row(formulaireSaisirFrais.nuiteeHotel,{'value':ficheFraisForfait[2]['quantite']})}}
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        {{form_row(formulaireSaisirFrais.repasRestaurant,{'value':ficheFraisForfait[3]['quantite']})}}
+                                    </div>
+                            
+                                
+                                <div class =\"form-group\">
                                     {{form_row(formulaireSaisirFrais.envoyer)}}
                                 </div>
                                 <div class =\"form-group\">                          
@@ -244,16 +281,40 @@ class __TwigTemplate_ab75053e1ceb98008a64509d55e4e274e020817c9e0e59545603ff6fa6e
                     </div>
                 </div>
             </div>
+            <div class=\"col-lg-5 col-md-7 col-sm-9 col-6 mx-auto\">
+                <div class=\"grid\">
+                    <div class=\"grid-body\">
+                        <div class=\"item-wrapper\">
+                            {{form_start(formulaireSaisirFraisHorsForfait)}}
+                                
+                                <h2 class=\"grid-header\">Frais Hors forfait : </h2>
+                            
+                                    <div class =\"form-group\">                          
+                                        {{form_row(formulaireSaisirFraisHorsForfait.date)}}
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        {{form_row(formulaireSaisirFraisHorsForfait.libelle)}}
+                                    </div>
+                                    <div class =\"form-group\">                          
+                                        {{form_row(formulaireSaisirFraisHorsForfait.montant)}}
+                                    </div>
+                                
+                                <div class =\"form-group\">
+                                    {{form_row(formulaireSaisirFraisHorsForfait.envoyer)}}
+                                </div>
+                                <div class =\"form-group\">                          
+                                    {{form_row(formulaireSaisirFraisHorsForfait.annuler)}}
+                                </div>
+                            {{form_end(formulaireSaisirFraisHorsForfait)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        
     </div>
 
-
-
-    
-                        
-                    
-                             
-   
 {% endblock %}", "visiteur/menu/saisir/saisirFicheFrais.html.twig", "/var/www/html/GSB-FRAIS/templates/visiteur/menu/saisir/saisirFicheFrais.html.twig");
     }
 }

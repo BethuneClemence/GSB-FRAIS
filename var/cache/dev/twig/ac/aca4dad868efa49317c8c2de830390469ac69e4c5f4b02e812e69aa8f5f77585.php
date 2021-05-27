@@ -85,42 +85,43 @@ class __TwigTemplate_27a6eba583f02f6fc30aa4c9d1237b3bc17bee9782cd256741e56eef87d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
-        echo "
+        echo "    
     <div class=\"authentication-theme auth-style_1\">
+        <h1 style=\"text-align:center; margin-bottom:40px; color: #114da6; \"><b>Consulter une fiche</b></h1>
         <div class=\"row\">
             <div class=\"col-lg-5 col-md-7 col-sm-9 col-11 mx-auto\">
                 <div class=\"grid\">
                     <div class=\"grid-body\">
                         ";
-        // line 11
+        // line 12
         if (array_key_exists("donneesInvalides", $context)) {
-            // line 12
+            // line 13
             echo "                            <div class=\"alert alert-danger\" role=\"alert\">
                                 Il nexiste pas de données pour ce mois et cette année
                             </div>
                         ";
         }
-        // line 16
+        // line 17
         echo "                        <div class=\"item-wrapper\">
                             ";
-        // line 17
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formConsulterFicheFrais"]) || array_key_exists("formConsulterFicheFrais", $context) ? $context["formConsulterFicheFrais"] : (function () { throw new RuntimeError('Variable "formConsulterFicheFrais" does not exist.', 17, $this->source); })()), 'form_start');
+        // line 18
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formConsulterFicheFrais"]) || array_key_exists("formConsulterFicheFrais", $context) ? $context["formConsulterFicheFrais"] : (function () { throw new RuntimeError('Variable "formConsulterFicheFrais" does not exist.', 18, $this->source); })()), 'form_start');
         echo "
                                 <div class =\"form-group\">
                                     ";
-        // line 19
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formConsulterFicheFrais"]) || array_key_exists("formConsulterFicheFrais", $context) ? $context["formConsulterFicheFrais"] : (function () { throw new RuntimeError('Variable "formConsulterFicheFrais" does not exist.', 19, $this->source); })()), "mois", [], "any", false, false, false, 19), 'row');
+        // line 20
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formConsulterFicheFrais"]) || array_key_exists("formConsulterFicheFrais", $context) ? $context["formConsulterFicheFrais"] : (function () { throw new RuntimeError('Variable "formConsulterFicheFrais" does not exist.', 20, $this->source); })()), "mois", [], "any", false, false, false, 20), 'row');
         echo "  
                                 </div>
                                 <div class =\"form-group\">                          
                                     ";
-        // line 22
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formConsulterFicheFrais"]) || array_key_exists("formConsulterFicheFrais", $context) ? $context["formConsulterFicheFrais"] : (function () { throw new RuntimeError('Variable "formConsulterFicheFrais" does not exist.', 22, $this->source); })()), "annee", [], "any", false, false, false, 22), 'row');
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formConsulterFicheFrais"]) || array_key_exists("formConsulterFicheFrais", $context) ? $context["formConsulterFicheFrais"] : (function () { throw new RuntimeError('Variable "formConsulterFicheFrais" does not exist.', 23, $this->source); })()), "annee", [], "any", false, false, false, 23), 'row');
         echo "
                                 </div>
                             ";
-        // line 24
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formConsulterFicheFrais"]) || array_key_exists("formConsulterFicheFrais", $context) ? $context["formConsulterFicheFrais"] : (function () { throw new RuntimeError('Variable "formConsulterFicheFrais" does not exist.', 24, $this->source); })()), 'form_end');
+        // line 25
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formConsulterFicheFrais"]) || array_key_exists("formConsulterFicheFrais", $context) ? $context["formConsulterFicheFrais"] : (function () { throw new RuntimeError('Variable "formConsulterFicheFrais" does not exist.', 25, $this->source); })()), 'form_end');
         echo "
                         </div>
                     </div>
@@ -157,7 +158,7 @@ class __TwigTemplate_27a6eba583f02f6fc30aa4c9d1237b3bc17bee9782cd256741e56eef87d
 
     public function getDebugInfo()
     {
-        return array (  123 => 24,  118 => 22,  112 => 19,  107 => 17,  104 => 16,  98 => 12,  96 => 11,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  124 => 25,  119 => 23,  113 => 20,  108 => 18,  105 => 17,  99 => 13,  97 => 12,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -166,8 +167,9 @@ class __TwigTemplate_27a6eba583f02f6fc30aa4c9d1237b3bc17bee9782cd256741e56eef87d
 {% block title %}- Visiteur{% endblock %}
 
 {% block body %}
-
+    
     <div class=\"authentication-theme auth-style_1\">
+        <h1 style=\"text-align:center; margin-bottom:40px; color: #114da6; \"><b>Consulter une fiche</b></h1>
         <div class=\"row\">
             <div class=\"col-lg-5 col-md-7 col-sm-9 col-11 mx-auto\">
                 <div class=\"grid\">

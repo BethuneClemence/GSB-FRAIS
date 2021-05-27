@@ -4,37 +4,36 @@
 {% block body %}
 
     <div class="authentication-theme auth-style_1">
+        <h1 style="text-align:center; margin-bottom:40px; color: #114da6; "><b>Saisir une fiche</b></h1>
         <div class="row">
-            <div class="col-lg-5 col-md-7 col-sm-9 col-11 mx-auto">
+            <div class="col-lg-5 col-md-7 col-sm-9 col-6 mx-auto">
                 <div class="grid">
                     <div class="grid-body">
                         <div class="item-wrapper">
                             {{form_start(formulaireSaisirFrais)}}
-                            <h2 class="grid-header">Période d'engagement : </h2>
-                                <div class ="form-group">
-                                    {{form_row(formulaireSaisirFrais.mois)}}  
-                                </div>
-                                <div class ="form-group">                          
-                                    {{form_row(formulaireSaisirFrais.annee)}}
-                                </div>
+                                
                                 <h2 class="grid-header">Frais au forfait : </h2>
+                                
                                 <div class ="form-group">                          
-                                    {{form_row(formulaireSaisirFrais.repas)}}
+                                    {{form_row(formulaireSaisirFrais.mois, {'value': date, 'disabled': 'disabled'})}}
                                 </div>
-                                <div class ="form-group">                          
-                                    {{form_row(formulaireSaisirFrais.nuitee)}}
-                                </div>
-                                <div class ="form-group">                          
-                                    {{form_row(formulaireSaisirFrais.km)}}
-                                </div>
-                                 <h2 class="grid-header">Hors classification : </h2>
-                                <div class ="form-group">                          
-                                    {{form_row(formulaireSaisirFrais.nbJustificatif)}}
-                                </div>
-                                <div class ="form-group">                          
-                                    {{form_row(formulaireSaisirFrais.montantTotal)}}
-                                </div>
-                                <div class ="form-group">                          
+
+                                
+                                    <div class ="form-group">                          
+                                        {{form_row(formulaireSaisirFrais.forfaitEtape, {'value':ficheFraisForfait[0]['quantite']})}}
+                                    </div>
+                                    <div class ="form-group">                          
+                                        {{form_row(formulaireSaisirFrais.fraisKm,{'value':ficheFraisForfait[1]['quantite']})}}
+                                    </div>
+                                    <div class ="form-group">                          
+                                        {{form_row(formulaireSaisirFrais.nuiteeHotel,{'value':ficheFraisForfait[2]['quantite']})}}
+                                    </div>
+                                    <div class ="form-group">                          
+                                        {{form_row(formulaireSaisirFrais.repasRestaurant,{'value':ficheFraisForfait[3]['quantite']})}}
+                                    </div>
+                            
+                                
+                                <div class ="form-group">
                                     {{form_row(formulaireSaisirFrais.envoyer)}}
                                 </div>
                                 <div class ="form-group">                          
@@ -45,14 +44,38 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-5 col-md-7 col-sm-9 col-6 mx-auto">
+                <div class="grid">
+                    <div class="grid-body">
+                        <div class="item-wrapper">
+                            {{form_start(formulaireSaisirFraisHorsForfait)}}
+                                
+                                <h2 class="grid-header">Frais Hors forfait : </h2>
+                            
+                                    <div class ="form-group">                          
+                                        {{form_row(formulaireSaisirFraisHorsForfait.date)}}
+                                    </div>
+                                    <div class ="form-group">                          
+                                        {{form_row(formulaireSaisirFraisHorsForfait.libelle)}}
+                                    </div>
+                                    <div class ="form-group">                          
+                                        {{form_row(formulaireSaisirFraisHorsForfait.montant)}}
+                                    </div>
+                                
+                                <div class ="form-group">
+                                    {{form_row(formulaireSaisirFraisHorsForfait.envoyer)}}
+                                </div>
+                                <div class ="form-group">                          
+                                    {{form_row(formulaireSaisirFraisHorsForfait.annuler)}}
+                                </div>
+                            {{form_end(formulaireSaisirFraisHorsForfait)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        
     </div>
 
-
-
-    
-                        
-                    
-                             
-   
 {% endblock %}
