@@ -90,7 +90,7 @@ class __TwigTemplate_0ced2eb2592d49f1cde759adeb49c854bb449a9e099f8ec37ae91ce04c8
         <div class=\"row\">
             <div class=\"col-lg-10 col-md-7 col-sm-9 col-11 mx-auto\">
                 <div class=\"grid\">
-                  <h2 class=\"grid-header\"><b>Fiche du ";
+                  <h2 class=\"grid-header\"><b>Fiche Frais Forfaitisés du ";
         // line 10
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFrais"]) || array_key_exists("ficheFrais", $context) ? $context["ficheFrais"] : (function () { throw new RuntimeError('Variable "ficheFrais" does not exist.', 10, $this->source); })()), 0, [], "array", false, false, false, 10), "mois", [], "array", false, false, false, 10), "html", null, true);
         echo "</b></h2>
@@ -101,45 +101,34 @@ class __TwigTemplate_0ced2eb2592d49f1cde759adeb49c854bb449a9e099f8ec37ae91ce04c8
                           <tr>
                             <th><b>Etat</b></th>
                             <th><b>Date</b></th>
+                            <th><b>Libelle Forfait</b></th>
                             <th><b>Quantitée Frais Forfaitisés</b></th>
-                            <th><b>Quantitée Frais non Forfaitisés</b></th>
-                            <th><b>Montant</b></th>
-                            <th><b>Libelle</b></th>
-                            <th><b>Date d'engagement</b></th>
                           </tr>
                         </thead>
                         <tbody>
                           ";
-        // line 27
+        // line 24
         echo "                          ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["ficheFrais"]) || array_key_exists("ficheFrais", $context) ? $context["ficheFrais"] : (function () { throw new RuntimeError('Variable "ficheFrais" does not exist.', 27, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["fraisForfait"]) || array_key_exists("fraisForfait", $context) ? $context["fraisForfait"] : (function () { throw new RuntimeError('Variable "fraisForfait" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["ligne"]) {
-            // line 28
+            // line 25
             echo "                          <tr>
                               <td>";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFrais"]) || array_key_exists("ficheFrais", $context) ? $context["ficheFrais"] : (function () { throw new RuntimeError('Variable "ficheFrais" does not exist.', 26, $this->source); })()), 0, [], "array", false, false, false, 26), "libelle", [], "array", false, false, false, 26), "html", null, true);
+            echo "</td>
+                              <td>";
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFrais"]) || array_key_exists("ficheFrais", $context) ? $context["ficheFrais"] : (function () { throw new RuntimeError('Variable "ficheFrais" does not exist.', 27, $this->source); })()), 0, [], "array", false, false, false, 27), "mois", [], "array", false, false, false, 27), "html", null, true);
+            echo "</td>
+                              <td>";
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "idFraisForfait", [], "array", false, false, false, 28), "html", null, true);
+            echo "</td>
+                              <td>";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], 11, [], "array", false, false, false, 29), "html", null, true);
-            echo "</td>
-                              <td>";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "mois", [], "array", false, false, false, 30), "html", null, true);
-            echo "</td>
-                              <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "quantite", [], "array", false, false, false, 31), "html", null, true);
-            echo "</td>
-                              <td>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "quantite", [], "array", false, false, false, 32), "html", null, true);
-            echo "</td>
-                              <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "montantValide", [], "array", false, false, false, 33), "html", null, true);
-            echo "</td>
-                              <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], 15, [], "array", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "quantite", [], "array", false, false, false, 29), "html", null, true);
             echo "</td>
                           </tr>
                           ";
@@ -147,8 +136,63 @@ class __TwigTemplate_0ced2eb2592d49f1cde759adeb49c854bb449a9e099f8ec37ae91ce04c8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
-        echo "                        </tbody>
+        // line 32
+        echo "                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class=\"grid\">
+                  <h2 class=\"grid-header\"><b>Fiche Frais Hors Forfaitisés du ";
+        // line 39
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFrais"]) || array_key_exists("ficheFrais", $context) ? $context["ficheFrais"] : (function () { throw new RuntimeError('Variable "ficheFrais" does not exist.', 39, $this->source); })()), 0, [], "array", false, false, false, 39), "mois", [], "array", false, false, false, 39), "html", null, true);
+        echo "</b></h2>
+                  <div class=\"item-wrapper\">
+                    <div class=\"table-responsive\">
+                      <table class=\"table info-table\">
+                        <thead>
+                          <tr>
+                            <th><b>Etat</b></th>
+                            <th><b>Date</b></th>
+                            <th><b>Libelle Hors Forfait</b></th>
+                            <th><b>Montant</b></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          ";
+        // line 53
+        echo "                          ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["fraisHorsForfait"]) || array_key_exists("fraisHorsForfait", $context) ? $context["fraisHorsForfait"] : (function () { throw new RuntimeError('Variable "fraisHorsForfait" does not exist.', 53, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["ligne"]) {
+            // line 54
+            echo "                          <tr>
+                              <td>";
+            // line 55
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFrais"]) || array_key_exists("ficheFrais", $context) ? $context["ficheFrais"] : (function () { throw new RuntimeError('Variable "ficheFrais" does not exist.', 55, $this->source); })()), 0, [], "array", false, false, false, 55), "libelle", [], "array", false, false, false, 55), "html", null, true);
+            echo "</td>
+                              <td>";
+            // line 56
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["ficheFrais"]) || array_key_exists("ficheFrais", $context) ? $context["ficheFrais"] : (function () { throw new RuntimeError('Variable "ficheFrais" does not exist.', 56, $this->source); })()), 0, [], "array", false, false, false, 56), "mois", [], "array", false, false, false, 56), "html", null, true);
+            echo "</td>
+                              <td>";
+            // line 57
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "libelle", [], "array", false, false, false, 57), "html", null, true);
+            echo "</td>
+                              <td>";
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ligne"], "montant", [], "array", false, false, false, 58), "html", null, true);
+            echo "</td>
+                          </tr>
+                          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ligne'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 61
+        echo "                          
+                        </tbody>
                       </table>
                     </div>
                   </div>
@@ -176,7 +220,7 @@ class __TwigTemplate_0ced2eb2592d49f1cde759adeb49c854bb449a9e099f8ec37ae91ce04c8
 
     public function getDebugInfo()
     {
-        return array (  151 => 37,  142 => 34,  138 => 33,  134 => 32,  130 => 31,  126 => 30,  122 => 29,  119 => 28,  114 => 27,  95 => 10,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  194 => 61,  185 => 58,  181 => 57,  177 => 56,  173 => 55,  170 => 54,  165 => 53,  149 => 39,  140 => 32,  131 => 29,  127 => 28,  123 => 27,  119 => 26,  116 => 25,  111 => 24,  95 => 10,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -190,7 +234,7 @@ class __TwigTemplate_0ced2eb2592d49f1cde759adeb49c854bb449a9e099f8ec37ae91ce04c8
         <div class=\"row\">
             <div class=\"col-lg-10 col-md-7 col-sm-9 col-11 mx-auto\">
                 <div class=\"grid\">
-                  <h2 class=\"grid-header\"><b>Fiche du {{ficheFrais[0]['mois']}}</b></h2>
+                  <h2 class=\"grid-header\"><b>Fiche Frais Forfaitisés du {{ficheFrais[0]['mois']}}</b></h2>
                   <div class=\"item-wrapper\">
                     <div class=\"table-responsive\">
                       <table class=\"table info-table\">
@@ -198,25 +242,50 @@ class __TwigTemplate_0ced2eb2592d49f1cde759adeb49c854bb449a9e099f8ec37ae91ce04c8
                           <tr>
                             <th><b>Etat</b></th>
                             <th><b>Date</b></th>
+                            <th><b>Libelle Forfait</b></th>
                             <th><b>Quantitée Frais Forfaitisés</b></th>
-                            <th><b>Quantitée Frais non Forfaitisés</b></th>
-                            <th><b>Montant</b></th>
-                            <th><b>Libelle</b></th>
-                            <th><b>Date d'engagement</b></th>
                           </tr>
                         </thead>
                         <tbody>
                           {# {{dump(ficheFrais)}} #}
-                          {% for ligne in ficheFrais %}
+                          {% for ligne in fraisForfait %}
                           <tr>
-                              <td>{{ligne[11]}}</td>
-                              <td>{{ligne['mois']}}</td>
+                              <td>{{ficheFrais[0]['libelle']}}</td>
+                              <td>{{ficheFrais[0]['mois']}}</td>
+                              <td>{{ligne['idFraisForfait']}}</td>
                               <td>{{ligne['quantite']}}</td>
-                              <td>{{ligne['quantite']}}</td>
-                              <td>{{ligne['montantValide']}}</td>
-                              <td>{{ligne[15]}}</td>
                           </tr>
                           {% endfor %}
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class=\"grid\">
+                  <h2 class=\"grid-header\"><b>Fiche Frais Hors Forfaitisés du {{ficheFrais[0]['mois']}}</b></h2>
+                  <div class=\"item-wrapper\">
+                    <div class=\"table-responsive\">
+                      <table class=\"table info-table\">
+                        <thead>
+                          <tr>
+                            <th><b>Etat</b></th>
+                            <th><b>Date</b></th>
+                            <th><b>Libelle Hors Forfait</b></th>
+                            <th><b>Montant</b></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {# {{dump(ficheFrais)}} #}
+                          {% for ligne in fraisHorsForfait %}
+                          <tr>
+                              <td>{{ficheFrais[0]['libelle']}}</td>
+                              <td>{{ficheFrais[0]['mois']}}</td>
+                              <td>{{ligne['libelle']}}</td>
+                              <td>{{ligne['montant']}}</td>
+                          </tr>
+                          {% endfor %}
+                          
                         </tbody>
                       </table>
                     </div>

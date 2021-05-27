@@ -36,7 +36,7 @@
             $formConsulterFicheFrais = $this->createFormBuilder(array('allow_extra_fields' =>true))
             ->add('mois', ChoiceType::class, array('label'=>'', 'attr'=> array('class'=>'form-control'),
                 'choices' => array(
-                    'janvier' => '01',
+                    'janvier' => '01', 
                     'fevrier' => '02',
                     'mars' => '03',
                     'avril' => '04',
@@ -67,19 +67,14 @@
                 $identifiant = $this->get('session')->get('id');
 
                 $date = sprintf('%02d%04d' , $donneesFormulaire['mois'] , $donneesFormulaire['annee']);
-                $uneFicheFrais = $modele->consulterFicheFraisForfait($identifiant,$date); // permet d'appeler la fonction seConnecterVisiteur() par le biai de notre objet $modele
                 
-                
-                
-                //var_dump($fiche);
-                //var_dump($uneFicheFrais);
-                //var_dump($uneFicheFraisForfait);
-                //var_dump($uneFicheFraisHorsForfait);
-
-                // $id = $this->get('session')->get('id'); Pour récuperer l'id du user authentifié
-
+                $uneFicheFrais = $modele->consulterFicheFrais($identifiant,$date);
+                $uneFicheFraisForfait = $modele->consulterFicheFraisForfait($identifiant,$date);
+                $uneFicheFraisHorsforfait = $modele->consulterFicheFraisHorsForfait($identifiant,$date);
+            
                 if(!empty($uneFicheFrais)){
-                    return new Response($this->page->render('visiteur/menu/consulter/afficher/afficherFicheFrais.html.twig', array('ficheFrais'=> $uneFicheFrais)));
+                    //return new Response($this->page->render('visiteur/menu/consulter/afficher/afficherFicheFrais.html.twig', array('ficheFrais'=> $uneFicheFrais)));
+                    return new Response($this->page->render('visiteur/menu/consulter/afficher/afficherFicheFrais.html.twig', array('ficheFrais'=> $uneFicheFrais, 'fraisForfait'=>$uneFicheFraisForfait, 'fraisHorsForfait'=>$uneFicheFraisHorsforfait)));
 
                 }else return new Response($this->page->render('visiteur/menu/consulter/consulterFrais.html.twig', array('formConsulterFicheFrais' => $formConsulterFicheFrais->createView(), 'donneesInvalides' => true)));
             
